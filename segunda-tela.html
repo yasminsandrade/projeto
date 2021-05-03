@@ -5,89 +5,127 @@
 	<title>Catálogo de Peças</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="https://kit.fontawesome.com/82c2265add.js" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="teste.css">
+	<style>@import url('https://fonts.googleapis.com/css2?family=Goldman&family=Lato&display=swap');</style>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 	<header class="initial">
 		<div class="logo">
-			<img src="/">
+			<a href="primeira-tela.html"><img class="logo" src="images/logo.png"/></a>
 		</div>
 
 		<div class="menu-navigation-title">
 			<nav class="menu">
 				<ul class="list">
-					<a href="#"><li>Início</li></a>
-					<a href="#"><li>Configurações</li></a>
-					<a href="#"><li>Contato</li></a>
+					<li class="listItems"><a class="menu" href="primeira-tela.html">Início</a></li>
+					<li class="listItems"><a class="menu" href="#">Configurações</a></li>
+					<li class="listItems"><a class="menu" href="#">Contato</a></li>
 				</ul>
 			</nav>
-
 			<h1 class="title"> Catálogo de Peças </h1>
 		</div>
 	</header>
-
-	<content class="result">
-		<h4> Resultado da Pesquisa</h4>
-			<table class="code">
-				<tr> 
-					<th> Código </th>
-					<th> Descrição </th>
-				</tr>
-
+	<section class="body">	
+		<section class="bar">
+			<a href="primeira-tela.html"><button class="search" type="button">Voltar<i class="fas fa-arrow-left"></i></button></a>
+		</section>
+		<fieldset class="result-search">
+			<legend> Resultado da Pesquisa</legend>
+			<table id="results">
 				<tr>
-					<td>teste código</td>
-					<td>teste descrição</td>
+					<th>Código</th>
+					<th>Descrição</th>
+				</tr>
+				<tr>
+					<td>HG30853</td>
+					<td>Amortecedor Dianteiro</td>
+				</tr>
+				<tr>
+					<td>N3045</td>
+					<td>Pivô de Suspensão</td>
+				</tr>
+				<tr>
+					<td>N3008</td>
+					<td>Terminal de Direção</td>
+				</tr>
 			</table>
-	</content>
-
-	<content class="details">
-		<h4> Detalhes</h4>
-		<span>Veiculos</span>
-
-		<div class="results-search-details">
-
-			<div class="veiculo-details">
-				<table class="details-veiculo">
-					<tr> 
-						<th> Montadora </th>
-						<th> Modelo </th>
-						<th> Motor </th>
-						<th> Ano Inicial </th>
-						<th> Ano Final </th>
-					</tr>
-					
+		</fieldset>
+		<fieldset class="result-search">
+			<legend> Detalhes</legend>
+			<h3>Veículos</h3>
+			<table id="veiculos">
+				<tr>
+					<th>Montadora</th>
+					<th>Modelo</th>
+					<th>Motor</th>
+					<th>Ano inicial</th>
+					<th>Ano final</th>
+				</tr>
+				<tr>
+					<td>GM</td>
+					<td>Celta</td>
+					<td>Todos</td>
+					<td>2000</td>
+					<td>2014</td>
+				</tr>
+				<tr>
+					<td>GM</td>
+					<td>Corsa</td>
+					<td>Todos</td>
+					<td>1994</td>
+					<td>2002</td>
+				</tr>
+			</table>
+			<section class="detalhes">
+				<table id="detalhes">
 					<tr>
-						<td>teste montadora</td>
-						<td>teste modelo</td>
-						<td>teste motor</td>
-						<td>teste ano inicial</td>
-						<td>teste ano final</td>
-				</table>
-			</div>
-
-			<div class="extra-details">
-
-				<table class="extra-details-table">
-					<tr> 
-						<th> Similiares: </th>
-						<th> Cód. Montadora </th>
+						<th>Similares:</th>
 					</tr>
-
 					<tr>
-						<td>teste similiares</td>
-						<td>teste cód montadora</td>
+						<td>GP30192</td>
+					</tr>
+					<tr>
+						<td>SP034</td>
 					</tr>
 				</table>
-
-				<div class="img-veiculo">
-					<img src="/" alt="imagem">
+				<table id="detalhes">
+					<tr>
+						<th>Cód. Montadora:</th>
+					</tr>
+					<tr>
+						<td>93047299</td>
+					</tr>
+				</table>
+				<img src="images/peca.jpg" class="pecaImg" id="imgPeca">
+				<div id="modalPecas" class="modal">
+					<span class="close">&times;</span>
+					<img class="modal-content" id="img01">
 				</div>
-
-			</div>
-
-		</div>
-	</content>
-
+			</section>
+		</fieldset>
+	</section>
+	<footer>
+		<section class="footer">
+			<img src="images/logo.png" height="30px"/>
+			<span class="footer">Catálogo de Peças</span>
+		</section>
+		<span class="credito">
+			Projeto Integrado do curso Análise e Desenvolvimento 
+			de Sistemas - Faculdade das Américas (FAM)
+		</span>
+    </footer>
+	<script>
+		var modal = document.getElementById("modalPecas");
+		var img = document.getElementById("imgPeca");
+		var modalImg = document.getElementById("img01");
+		img.onclick = function(){
+		  modal.style.display = "block";
+		  modalImg.src = this.src;
+		}
+		var span = document.getElementsByClassName("close")[0];
+		span.onclick = function() { 
+		  modal.style.display = "none";
+		}
+		</script>
 </body>
 </html>
